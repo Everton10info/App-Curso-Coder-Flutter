@@ -87,7 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-
     bool isLandsacape = mediaQuery.orientation == Orientation.landscape;
 
     final appBar = AppBar(
@@ -118,21 +117,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // if (isLandsacape)
-            /* Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Exibir Gráfico'),
-                  Switch(
-                    value: _showChart,
-                    onChanged: (value) {
-                      setState(() {
-                        _showChart = value;
-                      });
-                    },
-                  ),
-                ],
-              ), */
             if (_showChart || !isLandsacape)
               Container(
                 child: Chart(_recentTransactions),

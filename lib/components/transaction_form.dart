@@ -4,16 +4,37 @@ import 'package:intl/intl.dart';
 class TransactionForm extends StatefulWidget {
   final Function(String, double, DateTime) onSubmit;
 
-  TransactionForm(this.onSubmit);
+  TransactionForm(this.onSubmit) {
+    print('Constructor TransactionForm');
+  }
 
   @override
-  _TransactionFormState createState() => _TransactionFormState();
+  _TransactionFormState createState() {
+    print('create state TransactionForm');
+    return _TransactionFormState();
+  }
 }
 
 class _TransactionFormState extends State<TransactionForm> {
   final titleController = TextEditingController();
   final _valueControler = TextEditingController();
   DateTime _selectedDate = DateTime.now();
+
+  @override
+  void initState() {
+    print('initState _transactionFormState');
+  }
+
+  @override
+  void didUpdateWidget(Widget oldWidget) {
+    print('initState() -TransactionFormState');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('dispose(), -TransactionFormState');
+  }
 
   _submitForm() {
     final title = titleController.text;
